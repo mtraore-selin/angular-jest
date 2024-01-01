@@ -22,18 +22,28 @@ import { HousingService } from '../housing.service';
       </form>
     </section>
     <section class="results">
-      <app-housing-location
-        *ngFor="let housingLocation of filteredLocationList"
-        [housingLocation]="housingLocation"
-      >
-      </app-housing-location>
+      <!-- Show error div if there is an error -->
+      <div *ngIf="error" class="error-popup">
+        {{ error }}
+      </div>
+
+      <!-- Display housing locations if no error -->
+      <ng-container *ngIf="!error">
+        <app-housing-location
+          *ngFor="let housingLocation of filteredLocationList"
+          [housingLocation]="housingLocation"
+        >
+        </app-housing-location>
+      </ng-container>
     </section>
   `,
+
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   housingLocationList: HousingLocation[] = [];
   filteredLocationList: HousingLocation[] = [];
+  error: string | null = null; // Variable to store the error message
 
   constructor(private housingService: HousingService) {
     this.loadHousingLocations();
@@ -45,7 +55,7 @@ export class HomeComponent {
         await this.housingService.getAllHousingLocations();
       this.filteredLocationList = [...this.housingLocationList];
     } catch (error) {
-      console.error('Error loading housing locations:', error);
+      this.error = 'Error loading housing locations. Please try again later.';
     }
   }
 

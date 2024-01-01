@@ -78,7 +78,7 @@ devDependencies:
     version: 29.7.0(@types/node@16.18.69)(ts-node@10.9.2)
   jest-preset-angular:
     specifier: ^13.1.4
-    version: 13.1.4(@angular-devkit/build-angular@17.0.0)(@angular/compiler-cli@17.0.0)(@angular/core@17.0.0)(@angular/platform-browser-dynamic@17.0.0)(@babel/core@7.23.7)(jest@29.7.0)(typescript@4.9.5)
+    version: 13.1.4(@angular-devkit/build-angular@17.0.0)(@angular/compiler-cli@17.0.0)(@angular/core@17.0.0)(@angular/platform-browser-dynamic@17.0.0)(@babel/core@7.23.2)(jest@29.7.0)(typescript@4.9.5)
   karma:
     specifier: ~6.4.0
     version: 6.4.2
@@ -94,6 +94,9 @@ devDependencies:
   karma-jasmine-html-reporter:
     specifier: ~2.1.0
     version: 2.1.0(jasmine-core@5.1.1)(karma-jasmine@5.1.0)(karma@6.4.2)
+  nock:
+    specifier: ^13.4.0
+    version: 13.4.0
   protractor:
     specifier: ~7.0.0
     version: 7.0.0
@@ -6453,7 +6456,7 @@ packages:
       jest-resolve: 29.7.0
     dev: true
 
-  /jest-preset-angular@13.1.4(@angular-devkit/build-angular@17.0.0)(@angular/compiler-cli@17.0.0)(@angular/core@17.0.0)(@angular/platform-browser-dynamic@17.0.0)(@babel/core@7.23.7)(jest@29.7.0)(typescript@4.9.5):
+  /jest-preset-angular@13.1.4(@angular-devkit/build-angular@17.0.0)(@angular/compiler-cli@17.0.0)(@angular/core@17.0.0)(@angular/platform-browser-dynamic@17.0.0)(@babel/core@7.23.2)(jest@29.7.0)(typescript@4.9.5):
     resolution: {integrity: sha512-XKeWa8Qt7p37SzlJ85qEXgig06SgkfrzV057X2GSMqfz/HLJmTUjMFkHJKe65ZaQumNQWCcXpxXREr6EfZ9bow==}
     engines: {node: ^14.15.0 || >=16.10.0}
     peerDependencies:
@@ -6474,7 +6477,7 @@ packages:
       jest-environment-jsdom: 29.7.0
       jest-util: 29.7.0
       pretty-format: 29.7.0
-      ts-jest: 29.1.1(@babel/core@7.23.7)(esbuild@0.19.11)(jest@29.7.0)(typescript@4.9.5)
+      ts-jest: 29.1.1(@babel/core@7.23.2)(esbuild@0.19.11)(jest@29.7.0)(typescript@4.9.5)
       typescript: 4.9.5
     optionalDependencies:
       esbuild: 0.19.11
@@ -7418,6 +7421,17 @@ packages:
     dev: true
     optional: true
 
+  /nock@13.4.0:
+    resolution: {integrity: sha512-W8NVHjO/LCTNA64yxAPHV/K47LpGYcVzgKd3Q0n6owhwvD0Dgoterc25R4rnZbckJEb6Loxz1f5QMuJpJnbSyQ==}
+    engines: {node: '>= 10.13'}
+    dependencies:
+      debug: 4.3.4
+      json-stringify-safe: 5.0.1
+      propagate: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /node-addon-api@3.2.1:
     resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
     requiresBuild: true
@@ -8047,6 +8061,11 @@ packages:
     dependencies:
       kleur: 3.0.3
       sisteransi: 1.0.5
+    dev: true
+
+  /propagate@2.0.1:
+    resolution: {integrity: sha512-vGrhOavPSTz4QVNuBNdcNXePNdNMaO1xj9yBeH1ScQPjk/rhg9sSlCXPhMkFuaNNW/syTvYqsnbIJxMBfRbbag==}
+    engines: {node: '>= 8'}
     dev: true
 
   /protractor@7.0.0:
@@ -9276,7 +9295,7 @@ packages:
     hasBin: true
     dev: true
 
-  /ts-jest@29.1.1(@babel/core@7.23.7)(esbuild@0.19.11)(jest@29.7.0)(typescript@4.9.5):
+  /ts-jest@29.1.1(@babel/core@7.23.2)(esbuild@0.19.11)(jest@29.7.0)(typescript@4.9.5):
     resolution: {integrity: sha512-D6xjnnbP17cC85nliwGiL+tpoKN0StpgE0TeOjXQTU6MVCfsB4v7aW05CgQ/1OywGb0x/oy9hHFnN+sczTiRaA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -9297,7 +9316,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.23.7
+      '@babel/core': 7.23.2
       bs-logger: 0.2.6
       esbuild: 0.19.11
       fast-json-stable-stringify: 2.1.0
